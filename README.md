@@ -1,6 +1,3 @@
-# unity-architecture
-Official website and documentation for the Unity Architecture ecosystem.
-
 # Unity Architecture
 
 Opinionated architecture for professional Unity development.
