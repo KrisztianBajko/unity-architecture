@@ -22,6 +22,3 @@ This repository contains the public website, handbook, documentation, roadmap, a
 ## Framework Repository
 
 The Unity packages and Runtime Core source code live in the separate toolkit repository:
-
-```text
-https://github.com/KrisztianBajko/unity-architecture-toolkit
