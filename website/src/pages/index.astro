@@ -2,10 +2,12 @@
 import MainLayout from "../layouts/MainLayout.astro";
 import Hero from "../components/sections/Hero.astro";
 import Container from "../components/layout/Container.astro";
+import Section from "../components/layout/Section.astro";
 
 ---
 <MainLayout>
-    <Container>
+    <Section>
+     <Container>
         <Hero
             title="Unity Architecture"
             description="Opinionated architecture for professional Unity development."
@@ -22,5 +24,6 @@ import Container from "../components/layout/Container.astro";
                 }
             ]}
         />
-    </Container>
+     </Container>
+    </Section>
 </MainLayout>

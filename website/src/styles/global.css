@@ -218,3 +218,41 @@ main
     border-color: rgba(248, 250, 252, 0.32);
     background: rgba(255, 255, 255, 0.08);
 }
+
+.site-footer
+{
+    margin-top: 6rem;
+
+    border-top: 1px solid rgba(255,255,255,.08);
+}
+
+.site-footer__content
+{
+    width: min(1200px, calc(100% - 2rem));
+
+    margin: 0 auto;
+    padding: 2rem 0;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    color: rgba(248,250,252,.6);
+
+    font-size: .9rem;
+}
+
+@media (max-width:760px)
+{
+    .site-footer__content
+    {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: .5rem;
+    }
+}
+
+.section
+{
+    padding: 5rem 0;
+}
