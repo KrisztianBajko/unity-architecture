@@ -1,11 +1,26 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
+import Hero from "../components/sections/Hero.astro";
+import Container from "../components/layout/Container.astro";
+
 ---
-
 <MainLayout>
-    <h1>Unity Architecture</h1>
-
-    <p>
-        Opinionated architecture for professional Unity development.
-    </p>
+    <Container>
+        <Hero
+            title="Unity Architecture"
+            description="Opinionated architecture for professional Unity development."
+            actions={[
+                {
+                    label: "Start Learning",
+                    href: "/learn",
+                    variant: "primary"
+                },
+                {
+                    label: "Explore Toolkit",
+                    href: "/toolkit",
+                    variant: "secondary"
+                }
+            ]}
+        />
+    </Container>
 </MainLayout>

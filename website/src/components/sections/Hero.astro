@@ -1,0 +1,48 @@
+---
+import Button from "../ui/Button.astro";
+
+interface HeroAction
+{
+    label: string;
+    href: string;
+    variant?: "primary" | "secondary";
+}
+
+interface Props
+{
+    title: string;
+    description: string;
+    actions?: HeroAction[];
+}
+
+const
+{
+    title,
+    description,
+    actions = []
+} = Astro.props;
+---
+
+<section class="hero">
+    <div class="hero__content">
+        <h1>{title}</h1>
+
+        <p>{description}</p>
+
+        {
+            actions.length > 0 && (
+                <div class="hero__actions">
+                    {
+                        actions.map((action) => (
+                            <Button
+                                label={action.label}
+                                href={action.href}
+                                variant={action.variant}
+                            />
+                        ))
+                    }
+                </div>
+            )
+        }
+    </div>
+</section>

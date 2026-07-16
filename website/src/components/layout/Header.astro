@@ -1,0 +1,32 @@
+---
+import Container from "./Container.astro";
+
+const navigationItems = [
+    { label: "Home", href: "/" },
+    { label: "Learn", href: "/learn" },
+    { label: "Toolkit", href: "/toolkit" },
+    { label: "Store", href: "/store" },
+    { label: "Roadmap", href: "/roadmap" },
+    { label: "About", href: "/about" }
+];
+---
+
+<header class="site-header">
+    <Container class="site-header__inner">
+        <a class="site-header__brand" href="/">
+            Unity Architecture
+        </a>
+
+        <nav aria-label="Primary navigation">
+            <ul class="site-header__navigation">
+                {
+                    navigationItems.map((item) => (
+                        <li>
+                            <a href={item.href}>{item.label}</a>
+                        </li>
+                    ))
+                }
+            </ul>
+        </nav>
+    </Container>
+</header>
