@@ -1,0 +1,42 @@
+.hero
+{
+    min-height: 420px;
+
+    display: flex;
+    align-items: center;
+}
+
+.hero__content
+{
+    max-width: 820px;
+}
+
+.hero h1
+{
+    max-width: 760px;
+
+    font-size: clamp(2.75rem, 7vw, 5.5rem);
+    line-height: 0.98;
+    letter-spacing: -0.045em;
+}
+
+.hero p
+{
+    max-width: 680px;
+
+    margin-top: var(--space-sm);
+
+    color: var(--color-text-muted);
+
+    font-size: clamp(1.1rem, 2.2vw, 1.4rem);
+    line-height: 1.6;
+}
+
+.hero__actions
+{
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+
+    margin-top: var(--space-md);
+}

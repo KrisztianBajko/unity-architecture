@@ -1,0 +1,50 @@
+:root
+{
+    color-scheme: light dark;
+
+    /* ===========================
+       Colors
+       =========================== */
+
+    --color-background: #0f172a;
+    --color-surface: #1e293b;
+    --color-surface-hover: #26354b;
+
+    --color-text: #f8fafc;
+    --color-text-muted: rgba(248, 250, 252, 0.72);
+
+    --color-primary: #3b82f6;
+    --color-primary-hover: #2563eb;
+
+    --color-border: rgba(255, 255, 255, 0.08);
+
+    /* ===========================
+       Layout
+       =========================== */
+
+    --container-width: 1200px;
+
+    /* ===========================
+       Spacing
+       =========================== */
+
+    --space-xs: 0.5rem;
+    --space-sm: 1rem;
+    --space-md: 2rem;
+    --space-lg: 3rem;
+    --space-xl: 5rem;
+
+    /* ===========================
+       Radius
+       =========================== */
+
+    --radius-sm: 0.4rem;
+    --radius-md: 0.6rem;
+    --radius-lg: 1rem;
+
+    /* ===========================
+       Animation
+       =========================== */
+
+    --transition-fast: 160ms ease;
+}
