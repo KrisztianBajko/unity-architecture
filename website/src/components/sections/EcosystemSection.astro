@@ -1,0 +1,27 @@
+---
+import SectionHeader from "../ui/SectionHeader.astro";
+import EcosystemCard from "../ui/cards/EcosystemCard.astro";
+import { ecosystemItems } from "../../data/ecosystem";
+import Grid from "../layout/Grid.astro";
+
+---
+
+<div class="ecosystem-section">
+    <SectionHeader
+        title="The Ecosystem"
+        description="Unity Architecture combines learning, implementation and documentation into one connected development experience."
+    />
+
+    <Grid columns={3}>
+    {
+        ecosystemItems.map((item) => (
+            <EcosystemCard
+                title={item.title}
+                description={item.description}
+                href={item.href}
+                icon={item.icon}
+            />
+        ))
+    }
+    </Grid>
+</div>

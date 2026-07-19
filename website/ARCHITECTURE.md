@@ -140,6 +140,27 @@ Shared styling belongs to reusable components.
 
 ---
 
+## UI Composition Pattern
+
+Reusable visual primitives belong in `src/components/ui`.
+
+Examples:
+
+- `Button`
+- `Card`
+- `Icon`
+- `SectionHeader`
+
+More specific UI components should compose these primitives rather than duplicate their implementation.
+
+Examples:
+
+Card
+├── PrincipleCard
+├── EcosystemCard
+├── PackageCard
+└── ChapterCard
+
 ## Folder Structure
 
 src/

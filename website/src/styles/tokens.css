@@ -18,6 +18,10 @@
 
     --color-border: rgba(255, 255, 255, 0.08);
 
+    --color-success: #2f855a;
+    --color-warning: #d69e2e;
+    --color-info: #3182ce;
+
     /* ===========================
        Layout
        =========================== */

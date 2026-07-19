@@ -1,0 +1,28 @@
+---
+import Card from "./Card.astro";
+import Icon from "../Icon.astro";
+
+interface Props
+{
+    title: string;
+    description: string;
+    href: string;
+    icon: string;
+}
+
+const
+{
+    title,
+    description,
+    href,
+    icon
+} = Astro.props;
+---
+
+<Card class="ecosystem-card" href={href}>
+    <h3 class="ecosystem-card__title">
+    <Icon name={icon} />
+    {title}
+    </h3>
+    <p>{description}</p>
+</Card>

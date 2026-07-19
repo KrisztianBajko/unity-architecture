@@ -40,3 +40,16 @@
 
     margin-top: var(--space-md);
 }
+
+.why-section__body
+{
+    max-width: 760px;
+
+    margin-top: var(--space-md);
+
+    color: var(--color-text-muted);
+
+    font-size: 1.05rem;
+    line-height: 1.8;
+}
+

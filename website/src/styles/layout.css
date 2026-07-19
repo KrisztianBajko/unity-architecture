@@ -116,3 +116,20 @@
         gap: var(--space-xs);
     }
 }
+
+.grid
+{
+    display: grid;
+
+    grid-template-columns: repeat(var(--grid-columns), minmax(0, 1fr));
+
+    gap: var(--space-md);
+}
+
+@media (max-width: 900px)
+{
+    .grid
+    {
+        grid-template-columns: 1fr;
+    }
+}

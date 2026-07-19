@@ -3,8 +3,13 @@ import MainLayout from "../layouts/MainLayout.astro";
 import Hero from "../components/sections/Hero.astro";
 import Container from "../components/layout/Container.astro";
 import Section from "../components/layout/Section.astro";
+import WhySection from "../components/sections/WhySection.astro";
+import PrinciplesSection from "../components/sections/PrinciplesSection.astro";
+import EcosystemSection from "../components/sections/EcosystemSection.astro";
+import PackagesSection from "../components/sections/PackagesSection.astro";
 
 ---
+
 <MainLayout>
     <Section>
      <Container>
@@ -26,4 +31,28 @@ import Section from "../components/layout/Section.astro";
         />
      </Container>
     </Section>
+     <Section>
+        <Container>
+            <WhySection />
+        </Container>
+    </Section>
+
+    <Section>
+    <Container>
+        <PrinciplesSection />
+    </Container>
+    </Section>
+
+    <Section>
+    <Container>
+        <EcosystemSection />
+    </Container>
+    </Section>
+
+    <Section>
+    <Container>
+        <PackagesSection />
+    </Container>
+    </Section>
+
 </MainLayout>

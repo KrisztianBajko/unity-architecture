@@ -1,0 +1,26 @@
+---
+import Grid from "../layout/Grid.astro";
+import SectionHeader from "../ui/SectionHeader.astro";
+import PackageCard from "../ui/cards/PackageCard.astro";
+import { packageItems } from "../../data/packages";
+---
+
+<div class="packages-section">
+    <SectionHeader
+        title="Featured Packages"
+        description="Production-ready packages that implement the architectural principles taught throughout the Unity Architecture ecosystem."
+    />
+
+    <Grid columns={3}>
+        {
+            packageItems.map((item) => (
+                <PackageCard
+                    title={item.title}
+                    description={item.description}
+                    status={item.status}
+                    href={item.href}
+                />
+            ))
+        }
+    </Grid>
+</div>
