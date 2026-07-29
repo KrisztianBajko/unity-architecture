@@ -1,0 +1,29 @@
+---
+import SectionHeader from "../ui/SectionHeader.astro";
+import LearningPathCard from "../ui/cards/LearningPathCard.astro";
+import { learningPathItems } from "../../data/learningPath";
+import Grid from "../layout/Grid.astro";
+---
+
+<section class="section learning-path-section">
+    <div class="section__inner">
+        <SectionHeader
+            title="Learning Path"
+            description="Start with the fundamentals and progress through each chapter at your own pace."
+        />
+
+        <Grid columns={3}>
+            {
+                learningPathItems.map((item) => (
+                    <LearningPathCard
+                        chapter={item.chapter}
+                        title={item.title}
+                        description={item.description}
+                        status={item.status}
+                        href={item.href}
+                    />
+                ))
+            }
+        </Grid>
+    </div>
+</section>

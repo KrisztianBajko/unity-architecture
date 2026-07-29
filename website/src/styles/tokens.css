@@ -84,4 +84,22 @@
     --z-sticky: 200;
     --z-modal: 1000;
     --z-toast: 1100;
+
+    /* Badge Colors */
+
+    --badge-success-text:       #34a853;
+    --badge-success-border:     rgba(52, 168, 83, 0.5);
+    --badge-success-bg:         rgba(52, 168, 83, 0.12);
+
+    --badge-info-text:          #4da6f0;
+    --badge-info-border:        rgba(77, 166, 240, 0.5);
+    --badge-info-bg:            rgba(77, 166, 240, 0.12);
+
+    --badge-warning-text:       #f5a623;
+    --badge-warning-border:     rgba(245, 166, 35, 0.5);
+    --badge-warning-bg:         rgba(245, 166, 35, 0.12);
+
+    --badge-neutral-text:       rgba(255, 255, 255, 0.65);
+    --badge-neutral-border:     rgba(255, 255, 255, 0.25);
+    --badge-neutral-bg:         rgba(255, 255, 255, 0.06);
 }

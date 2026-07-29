@@ -1,0 +1,44 @@
+---
+import Card from "./Card.astro";
+import Badge from "../Badge.astro";
+import type { ChapterStatus } from "../../../data/learningPath";
+
+interface Props
+{
+    chapter: number;
+    title: string;
+    description: string;
+    status: ChapterStatus;
+    href: string;
+}
+
+const
+{
+    chapter,
+    title,
+    description,
+    status,
+    href
+} = Astro.props;
+
+const badgeConfig =
+{
+    free:         { label: "Free",         variant: "success" },
+    paid:         { label: "Paid",         variant: "info"    },
+    "coming-soon":{ label: "Coming Soon",  variant: "neutral" },
+} as const;
+
+const badge = badgeConfig[status];
+---
+
+<Card href={href} class="learning-path-card">
+    <div class="learning-path-card__chapter">Chapter {chapter}</div>
+
+    <h3 class="learning-path-card__title">{title}</h3>
+
+    <p class="learning-path-card__description">{description}</p>
+
+    <div class="learning-path-card__footer">
+        <Badge label={badge.label} variant={badge.variant} />
+    </div>
+</Card>
