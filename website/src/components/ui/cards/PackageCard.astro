@@ -2,12 +2,14 @@
 import Card from "./Card.astro";
 import Badge from "../Badge.astro";
 import Stack from "../../layout/Stack.astro";
+import { statusBadgeVariant } from "../../../data/packageStatus";
+import type { PackageStatus } from "../../../data/packageStatus";
 
 interface Props
 {
     title: string;
     description: string;
-    status: "Available" | "In Development" | "Planned";
+    status: PackageStatus;
     href: string;
 }
 
@@ -19,12 +21,7 @@ const
     href
 } = Astro.props;
 
-const badgeVariant =
-    status === "Available"
-        ? "success"
-        : status === "In Development"
-            ? "warning"
-            : "neutral";
+const badgeVariant = statusBadgeVariant[status];
 ---
 
 <Card href={href} class="package-card">

@@ -1,8 +1,10 @@
+import type { PackageStatus } from "./packageStatus";
+
 export interface PackageItem
 {
     title: string;
     description: string;
-    status: "Available" | "In Development" | "Planned";
+    status: PackageStatus;
     href: string;
 }
 
