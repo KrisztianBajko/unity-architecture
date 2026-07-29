@@ -198,3 +198,44 @@
     line-height: 1.8;
 }
 
+.cta-section
+{
+    background: var(--color-surface);
+}
+
+.cta
+{
+    max-width: 640px;
+    margin-inline: auto;
+
+    text-align: center;
+}
+
+.cta__title
+{
+    font-size: var(--font-size-heading);
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+}
+
+.cta__description
+{
+    margin-top: var(--space-md);
+
+    color: var(--color-text-muted);
+
+    font-size: var(--font-size-md);
+    line-height: 1.7;
+}
+
+.cta__actions
+{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: var(--space-md);
+
+    margin-top: var(--space-xl);
+}
+
