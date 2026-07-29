@@ -1,6 +1,7 @@
 ---
 import Card from "./Card.astro";
 import Badge from "../Badge.astro";
+import Stack from "../../layout/Stack.astro";
 
 interface Props
 {
@@ -26,20 +27,19 @@ const badgeVariant =
             : "neutral";
 ---
 
-<Card class="package-card" href={href}>
-    <h3 class="package-card__title">
-        {title}
-    </h3>
+<Card href={href} class="package-card">
+    <Stack gap="sm">
+        <h3 class="package-card__title">{title}</h3>
 
-    <p class="package-card__description">
-        {description}
-    </p>
+        <p class="package-card__description">
+            {description}
+        </p>
+    </Stack>
 
     <div class="package-card__status">
-    <Badge
-    label={status}
-    variant={badgeVariant}
-    />
+        <Badge
+            label={status}
+            variant={badgeVariant}
+        />
     </div>
-
 </Card>

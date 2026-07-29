@@ -8,40 +8,90 @@ interface HeroAction
     variant?: "primary" | "secondary";
 }
 
+interface HeroFeature
+{
+    label: string;
+    status: "available" | "development" | "planned";
+}
+
 interface Props
 {
     title: string;
     description: string;
     actions?: HeroAction[];
+    features?: HeroFeature[];
 }
+
+const statusConfig =
+{
+    available:   { label: "Available",       symbol: "✓" },
+    development: { label: "In Development",  symbol: "◐" },
+    planned:     { label: "Planned",         symbol: "○" },
+};
 
 const
 {
     title,
     description,
-    actions = []
+    actions = [],
+    features = []
 } = Astro.props;
 ---
 
 <section class="hero">
-    <div class="hero__content">
-        <h1>{title}</h1>
+    <div class="hero__layout">
+        <div class="hero__content">
+            <h1>{title}</h1>
 
-        <p>{description}</p>
+            <p>{description}</p>
+
+            {
+                actions.length > 0 && (
+                    <div class="hero__actions">
+                        {
+                            actions.map((action) => (
+                                <Button
+                                    label={action.label}
+                                    href={action.href}
+                                    variant={action.variant}
+                                />
+                            ))
+                        }
+                    </div>
+                )
+            }
+        </div>
 
         {
-            actions.length > 0 && (
-                <div class="hero__actions">
-                    {
-                        actions.map((action) => (
-                            <Button
-                                label={action.label}
-                                href={action.href}
-                                variant={action.variant}
-                            />
-                        ))
-                    }
-                </div>
+            features.length > 0 && (
+                <aside class="hero__panel">
+                    <p class="hero__panel-label">Unity Architecture Toolkit</p>
+
+                    <div class="hero__panel-list">
+                        {
+                            features.map((feature) =>
+                            {
+                                const config = statusConfig[feature.status];
+
+                                return (
+                                    <div class={`hero__panel-item hero__panel-item--${feature.status}`}>
+                                        <span class="hero__panel-name">{feature.label}</span>
+                                        <span class="hero__panel-status">
+                                            <span class="hero__panel-symbol">{config.symbol}</span>
+                                            {config.label}
+                                        </span>
+                                    </div>
+                                );
+                            })
+                        }
+                    </div>
+
+                    <div class="hero__panel-footer">
+                        <span>Open Source</span>
+                        <span>MIT License</span>
+                        <span>Unity 6</span>
+                    </div>
+                </aside>
             )
         }
     </div>

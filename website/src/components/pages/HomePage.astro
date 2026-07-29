@@ -1,0 +1,36 @@
+---
+import HeroSection from "../sections/Hero.astro";
+import WhySection from "../sections/WhySection.astro";
+import PrinciplesSection from "../sections/PrinciplesSection.astro";
+import EcosystemSection from "../sections/EcosystemSection.astro";
+import PackagesSection from "../sections/PackagesSection.astro";
+---
+
+<HeroSection
+    title="Unity Architecture"
+    description="Opinionated architecture for professional Unity development."
+    actions={[
+        {
+            label: "Start Learning",
+            href: "/learn",
+            variant: "primary"
+        },
+        {
+            label: "Explore Toolkit",
+            href: "/toolkit",
+            variant: "secondary"
+        }
+    ]}
+    features={[
+        { label: "Runtime Core",      status: "available"   },
+        { label: "Save System",       status: "development" },
+        { label: "Audio System",      status: "planned"     },
+        { label: "Inventory System",  status: "planned"     },
+        { label: "Mission System",    status: "planned"     },
+        { label: "Input System",      status: "planned"     }
+    ]}
+/>
+<WhySection />
+<PrinciplesSection />
+<EcosystemSection />
+<PackagesSection />

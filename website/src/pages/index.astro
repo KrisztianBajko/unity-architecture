@@ -1,58 +1,8 @@
 ---
-import MainLayout from "../layouts/MainLayout.astro";
-import Hero from "../components/sections/Hero.astro";
-import Container from "../components/layout/Container.astro";
-import Section from "../components/layout/Section.astro";
-import WhySection from "../components/sections/WhySection.astro";
-import PrinciplesSection from "../components/sections/PrinciplesSection.astro";
-import EcosystemSection from "../components/sections/EcosystemSection.astro";
-import PackagesSection from "../components/sections/PackagesSection.astro";
-
+import Layout from "../layouts/MainLayout.astro";
+import HomePage from "../components/pages/HomePage.astro";
 ---
 
-<MainLayout>
-    <Section>
-     <Container>
-        <Hero
-            title="Unity Architecture"
-            description="Opinionated architecture for professional Unity development."
-            actions={[
-                {
-                    label: "Start Learning",
-                    href: "/learn",
-                    variant: "primary"
-                },
-                {
-                    label: "Explore Toolkit",
-                    href: "/toolkit",
-                    variant: "secondary"
-                }
-            ]}
-        />
-     </Container>
-    </Section>
-     <Section>
-        <Container>
-            <WhySection />
-        </Container>
-    </Section>
-
-    <Section>
-    <Container>
-        <PrinciplesSection />
-    </Container>
-    </Section>
-
-    <Section>
-    <Container>
-        <EcosystemSection />
-    </Container>
-    </Section>
-
-    <Section>
-    <Container>
-        <PackagesSection />
-    </Container>
-    </Section>
-
-</MainLayout>
+<Layout title="Unity Architecture">
+    <HomePage />
+</Layout>

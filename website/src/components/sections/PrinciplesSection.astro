@@ -3,23 +3,24 @@ import SectionHeader from "../ui/SectionHeader.astro";
 import PrincipleCard from "../ui/cards/PrincipleCard.astro";
 import { principles } from "../../data/principles";
 import Grid from "../layout/Grid.astro";
-
 ---
 
-<div class="principles-section">
-    <SectionHeader
-        title="Architecture Principles"
-        description="A small set of practical principles guides every pattern, package and decision in the Unity Architecture ecosystem."
-    />
+<section class="section principles-section">
+    <div class="section__inner">
+        <SectionHeader
+            title="Architecture Principles"
+            description="A small set of practical principles guides every pattern, package and decision in the Unity Architecture ecosystem."
+        />
 
-    <Grid columns={2}>
-    {
-        principles.map((principle) => (
-            <PrincipleCard
-                title={principle.title}
-                description={principle.description}
-            />
-        ))
-    }
-    </Grid>
-</div>
+        <Grid columns={2}>
+            {
+                principles.map((principle) => (
+                    <PrincipleCard
+                        title={principle.title}
+                        description={principle.description}
+                    />
+                ))
+            }
+        </Grid>
+    </div>
+</section>
