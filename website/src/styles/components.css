@@ -614,3 +614,133 @@
     flex-direction: column;
     gap: var(--space-md);
 }
+
+.about-hero
+{
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: var(--space-2xl);
+    align-items: start;
+
+    margin-bottom: var(--space-2xl);
+    padding-bottom: var(--space-2xl);
+
+    border-bottom: 1px solid var(--color-border);
+}
+
+.about-hero__eyebrow
+{
+    margin-bottom: var(--space-sm);
+
+    color: var(--color-primary);
+
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+}
+
+.about-hero__name
+{
+    margin-bottom: var(--space-xs);
+
+    font-size: var(--font-size-heading);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+}
+
+.about-hero__role
+{
+    margin-bottom: var(--space-lg);
+
+    color: var(--color-text-muted);
+
+    font-size: var(--font-size-md);
+    font-weight: 500;
+}
+
+.about-hero__bio
+{
+    margin-bottom: var(--space-md);
+
+    color: var(--color-text-muted);
+
+    font-size: var(--font-size-md);
+    line-height: 1.8;
+}
+
+.about-hero__links
+{
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-md);
+
+    margin-top: var(--space-lg);
+}
+
+.about-link
+{
+    color: var(--color-primary);
+
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    text-decoration: none;
+
+    transition: color var(--transition-fast);
+}
+
+.about-link:hover
+{
+    color: var(--color-primary-hover);
+}
+
+.about-photo
+{
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    object-position: top;
+
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-border);
+}
+
+.about-project__title
+{
+    margin-bottom: var(--space-lg);
+
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.about-project__body p
+{
+    margin-bottom: var(--space-md);
+
+    color: var(--color-text-muted);
+
+    font-size: var(--font-size-md);
+    line-height: 1.8;
+}
+
+.about-project__body p:last-child
+{
+    margin-bottom: 0;
+}
+
+@media (max-width: 900px)
+{
+    .about-hero
+    {
+        grid-template-columns: 1fr;
+    }
+
+    .about-hero__photo
+    {
+        order: -1;
+
+        max-width: 240px;
+    }
+}
