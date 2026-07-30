@@ -1,0 +1,29 @@
+---
+import SectionHeader from "../ui/SectionHeader.astro";
+import StoreCard from "../ui/cards/StoreCard.astro";
+import { learningPathItems } from "../../data/learningPath";
+---
+
+<section class="section store-section">
+    <div class="section__inner">
+        <SectionHeader
+            title="Store"
+            description="Purchase handbook chapters to support the project and unlock paid content."
+        />
+
+        <div class="store-list">
+            {
+                learningPathItems.map((item) => (
+                    <StoreCard
+                        chapter={item.chapter}
+                        title={item.title}
+                        description={item.description}
+                        status={item.status}
+                        href={item.href}
+                        buyHref={item.buyHref}
+                    />
+                ))
+            }
+        </div>
+    </div>
+</section>

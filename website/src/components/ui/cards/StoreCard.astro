@@ -1,0 +1,62 @@
+---
+import Card from "./Card.astro";
+import Badge from "../Badge.astro";
+import Button from "../Button.astro";
+import { storeCTA } from "../../../data/learningPath";
+import type { ChapterStatus, LearningPathItem } from "../../../data/learningPath";
+
+interface Props
+{
+    chapter: number;
+    title: string;
+    description: string;
+    status: ChapterStatus;
+    href: string;
+    buyHref: string;
+}
+
+const
+{
+    chapter,
+    title,
+    description,
+    status,
+    href,
+    buyHref
+} = Astro.props;
+
+const badgeConfig =
+{
+    "free":         { label: "Free",         variant: "success" },
+    "paid":         { label: "Paid",         variant: "info"    },
+    "coming-soon":  { label: "Coming Soon",  variant: "neutral" },
+} as const;
+
+const badge = badgeConfig[status];
+
+const item: LearningPathItem = { chapter, title, description, status, href, buyHref };
+const cta = storeCTA[status];
+---
+
+<Card class="store-card">
+    <div class="store-card__header">
+        <span class="store-card__number">Chapter {chapter}</span>
+        <Badge label={badge.label} variant={badge.variant} />
+    </div>
+
+    <h3 class="store-card__title">{title}</h3>
+
+    <p class="store-card__description">{description}</p>
+
+    {
+        cta && (
+            <div class="store-card__footer">
+                <Button
+                    label={cta.label}
+                    href={cta.href(item)}
+                    variant="primary"
+                />
+            </div>
+        )
+    }
+</Card>
