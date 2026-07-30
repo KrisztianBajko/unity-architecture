@@ -518,3 +518,35 @@
     flex-direction: column;
     gap: var(--space-md);
 }
+
+.roadmap-column__item
+{
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+
+    padding-block: var(--space-sm);
+
+    border-bottom: 1px solid var(--color-border);
+}
+
+.roadmap-column__item:last-child
+{
+    border-bottom: none;
+}
+
+.roadmap-column__item-title
+{
+    color: var(--color-text);
+
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+}
+
+.roadmap-column__item-description
+{
+    color: var(--color-text-muted);
+
+    font-size: var(--font-size-sm);
+    line-height: 1.6;
+}

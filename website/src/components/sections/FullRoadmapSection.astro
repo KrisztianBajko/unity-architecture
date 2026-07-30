@@ -1,0 +1,54 @@
+---
+import SectionHeader from "../ui/SectionHeader.astro";
+import Badge from "../ui/Badge.astro";
+import { packageItems } from "../../data/packages";
+import { statusBadgeVariant } from "../../data/packageStatus";
+import type { PackageStatus } from "../../data/packageStatus";
+
+const statuses: PackageStatus[] = ["Available", "In Development", "Planned"];
+
+const columns = statuses.map((status) => ({
+    status,
+    variant: statusBadgeVariant[status],
+    items: packageItems.filter((p) => p.status === status),
+}));
+---
+
+<section class="section full-roadmap-section">
+    <div class="section__inner">
+        <SectionHeader
+            title="Roadmap"
+            description="A transparent view of what is built, what is in progress, and what is coming next."
+        />
+
+        <div class="roadmap-grid">
+            {
+                columns.map((column) => (
+                    <div class="roadmap-column">
+                        <div class="roadmap-column__header">
+                            <Badge
+                                label={column.status}
+                                variant={column.variant}
+                            />
+                        </div>
+
+                        <ul class="roadmap-column__list">
+                            {
+                                column.items.map((item) => (
+                                    <li class="roadmap-column__item">
+                                        <span class="roadmap-column__item-title">
+                                            {item.title}
+                                        </span>
+                                        <span class="roadmap-column__item-description">
+                                            {item.description}
+                                        </span>
+                                    </li>
+                                ))
+                            }
+                        </ul>
+                    </div>
+                ))
+            }
+        </div>
+    </div>
+</section>
