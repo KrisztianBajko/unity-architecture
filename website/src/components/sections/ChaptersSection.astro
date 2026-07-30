@@ -1,0 +1,28 @@
+---
+import SectionHeader from "../ui/SectionHeader.astro";
+import ChapterCard from "../ui/cards/ChapterCard.astro";
+import { learningPathItems } from "../../data/learningPath";
+---
+
+<section class="section chapters-section">
+    <div class="section__inner">
+        <SectionHeader
+            title="The Handbook"
+            description="A practical guide to professional Unity architecture. Start with the fundamentals and progress through each chapter at your own pace."
+        />
+
+        <div class="chapters-list">
+            {
+                learningPathItems.map((item) => (
+                    <ChapterCard
+                        chapter={item.chapter}
+                        title={item.title}
+                        description={item.description}
+                        status={item.status}
+                        href={item.href}
+                    />
+                ))
+            }
+        </div>
+    </div>
+</section>

@@ -9,6 +9,13 @@ export interface LearningPathItem
     href: string;
 }
 
+export const chapterCTA: Record<ChapterStatus, { label: string; href: (itemHref: string) => string } | null> =
+{
+    "free":         { label: "Read Chapter",  href: (h) => h       },
+    "paid":         { label: "Buy Chapter",   href: () => "/store" },
+    "coming-soon":  null,
+};
+
 export const learningPathItems: LearningPathItem[] =
 [
     {
