@@ -8,3 +8,10 @@ export const statusBadgeVariant: Record<PackageStatus, BadgeVariant> =
     "In Development":   "warning",
     "Planned":          "neutral",
 };
+
+export const statusCTA: Record<PackageStatus, { label: string } | null> =
+{
+    "Available":        { label: "View Documentation" },
+    "In Development":   { label: "View on GitHub"     },
+    "Planned":          null,
+};

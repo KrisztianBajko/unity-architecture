@@ -1,0 +1,28 @@
+---
+import SectionHeader from "../ui/SectionHeader.astro";
+import ToolkitCard from "../ui/cards/ToolkitCard.astro";
+import { packageItems } from "../../data/packages";
+---
+
+<section class="section toolkit-section">
+    <div class="section__inner">
+        <SectionHeader
+            title="The Toolkit"
+            description="Production-ready packages that implement the Unity Architecture principles. Import only what you need."
+        />
+
+        <div class="toolkit-list">
+            {
+                packageItems.map((item) => (
+                    <ToolkitCard
+                        title={item.title}
+                        description={item.description}
+                        status={item.status}
+                        href={item.href}
+                        githubHref={item.githubHref}
+                    />
+                ))
+            }
+        </div>
+    </div>
+</section>

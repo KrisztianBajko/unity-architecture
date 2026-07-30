@@ -1,0 +1,51 @@
+---
+import Card from "./Card.astro";
+import Badge from "../Badge.astro";
+import Button from "../Button.astro";
+import { statusBadgeVariant, statusCTA } from "../../../data/packageStatus";
+import type { PackageStatus } from "../../../data/packageStatus";
+
+interface Props
+{
+    title: string;
+    description: string;
+    status: PackageStatus;
+    href: string;
+    githubHref: string;
+}
+
+const
+{
+    title,
+    description,
+    status,
+    href,
+    githubHref
+} = Astro.props;
+
+const badgeVariant = statusBadgeVariant[status];
+const cta          = statusCTA[status];
+
+const ctaHref = status === "In Development" ? githubHref : href;
+---
+
+<Card class="toolkit-card">
+    <div class="toolkit-card__header">
+        <h3 class="toolkit-card__title">{title}</h3>
+        <Badge label={status} variant={badgeVariant} />
+    </div>
+
+    <p class="toolkit-card__description">{description}</p>
+
+    {
+        cta && (
+            <div class="toolkit-card__footer">
+                <Button
+                    label={cta.label}
+                    href={ctaHref}
+                    variant="primary"
+                />
+            </div>
+        )
+    }
+</Card>
