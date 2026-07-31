@@ -44,10 +44,10 @@ export const learningPathItems: LearningPathItem[] =
     },
     {
          chapter: 3,
-         title: "Interfaces & Abstraction",
-         description: "Learn how contracts create flexible architecture. Understand interfaces, the Dependency Inversion Principle, and how the toolkit uses contracts throughout its design.",
-         status: "free",
-         href: "#",
-         buyHref: "#"
+    title: "Interfaces & Abstraction",
+    description: "Learn how contracts create flexible architecture. Understand interfaces, the Dependency Inversion Principle, and how the toolkit uses contracts throughout its design.",
+    status: "coming-soon",
+    href: "#",
+    buyHref: "#"
     }
 ];
