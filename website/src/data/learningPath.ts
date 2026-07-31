@@ -43,11 +43,11 @@ export const learningPathItems: LearningPathItem[] =
         buyHref: "#"
     },
     {
-        chapter: 3,
-        title: "Runtime Core",
-        description: "Build a deterministic application lifecycle with configuration, services, events, logging and startup pipelines.",
-        status: "free",
-        href: "#",
-        buyHref: "#"
+         chapter: 3,
+         title: "Interfaces & Abstraction",
+         description: "Learn how contracts create flexible architecture. Understand interfaces, the Dependency Inversion Principle, and how the toolkit uses contracts throughout its design.",
+         status: "free",
+         href: "#",
+         buyHref: "#"
     }
 ];
